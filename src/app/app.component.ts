@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front-end';
+
+  pelicula = {
+    titulo: 'El heroe',
+    fechaLanzamiento: new Date(),
+    precio: 1400.99
+  }
+
+  duplicarNumero(valor: number): number {
+  return valor * 2;
+  }
 }
+
+
+
