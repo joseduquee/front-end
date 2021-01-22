@@ -1,20 +1,11 @@
-<p>Hola Mundo</p>
+<!-- <input type="file" style="display: none;" #cargador>
 
-<div>La suma de 2 y 2 son {{2 + 2}}</div>
+<button (click)="cargador.click()">Cargar Archivo</button> -->
 
-<div>El doble de 3 es</div>
+<!--Al hacer esto con el boton con la variable de referencia de plantilla al hacer click en 
+    el boton es como hiciera click en el input asi sea usa desde el html-->
+<app-menu></app-menu>
 
-<div>El doble de de es {{ duplicarNumero(3)}}</div>
-
-<h2>Datos de la pelicula</h2>
-
-<div>
-<div> 
-    {{ pelicula.titulo}}
-</div>
-
-<div>   
-    {{pelicula.fechaLanzamiento | date:"dd-MM-yyyy"}}
-</div>
-<div> {{ pelicula.precio | currency }}</div>  <!--La barrra es el pipe como date y curreny y uppercase-->
+<div class="contenedor">
+  <router-outlet></router-outlet>
 </div>

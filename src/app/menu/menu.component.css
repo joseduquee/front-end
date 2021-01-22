@@ -1,0 +1,9 @@
+/* con esto fijo el toolbar arriba */
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky; /*para que funciones en safari*/
+    top: 0;
+    z-index: 1000; /*con esto se evita que ponga encima de otros elementos*/
+
+
+}
