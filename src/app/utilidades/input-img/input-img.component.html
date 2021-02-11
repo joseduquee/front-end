@@ -10,6 +10,10 @@
 
 <div>   
     <div *ngIf="imagenBase64"> 
-        <img [src]="imagenBase64" alt="foto de actor">/>
+        <img [src]="imagenBase64" alt="foto de actor"/>
+    </div>
+    <div *ngIf="urlImagenActual">
+        <img [src] ="urlImagenActual" alt="">
+
     </div>
 </div>
