@@ -12,7 +12,7 @@ import "leaflet/dist/images/marker-shadow.png"
 import "leaflet/dist/images/marker-icon-2x.png"
 
 
-import {ReactiveFormsModule} from '@angular/forms' //para importa formularios
+import { ReactiveFormsModule, FormsModule} from '@angular/forms' //para importa formularios
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilidades/rating/rating.component';
@@ -36,6 +36,8 @@ import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdo
 import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
 import { MapaComponent } from './utilidades/mapa/mapa.component';
 import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/formulario-pelicula.component';
+import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component';
+import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
 
 
 @NgModule({
@@ -65,6 +67,8 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
     FormularioCineComponent,
     MapaComponent,
     FormularioPeliculaComponent,
+    SelectorMultipleComponent,
+    AutocompleteActoresComponent,
    
   ],
   imports: [
@@ -73,6 +77,7 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule,
     LeafletModule,
     MarkdownModule.forRoot()
     

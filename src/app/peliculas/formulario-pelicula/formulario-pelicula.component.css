@@ -9,3 +9,7 @@ mat-form-field {
 button {
     margin-right: 1rem;
 }
+
+.contenenedor-checkbox {
+    margin-bottom: 1rem;
+}
