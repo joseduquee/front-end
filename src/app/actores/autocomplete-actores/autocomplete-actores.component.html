@@ -16,7 +16,11 @@
   </mat-autocomplete>
 </form>
 
-<table *ngIf="actoresSeleccionados.length > 0" mat-table [dataSource]="actoresSeleccionados">
+<table 
+    *ngIf="actoresSeleccionados.length > 0" 
+    mat-table 
+    [dataSource]="actoresSeleccionados"
+    class="mat-elevation-z8">
 
     
     <ng-container matColumnDef="imagen">
