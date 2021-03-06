@@ -16,10 +16,13 @@ export class FormularioGeneroComponent implements OnInit {
   form: FormGroup; //este form es una propiedad
 
   @Input()
+  errores: string[] = [];
+
+  @Input()
   modelo: generoCreacionDTO;
 
   @Output()
-  submit: EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();
+  OnSubmit: EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();
 
   ngOnInit(): void {
     this.form = this.formBuilder.group ({
@@ -34,7 +37,7 @@ export class FormularioGeneroComponent implements OnInit {
   }
 
   guardarCambios() {
-    this.submit.emit(this.form.value);
+    this.OnSubmit.emit(this.form.value);
   }
 
   obtenerErrorCampoNombre() {

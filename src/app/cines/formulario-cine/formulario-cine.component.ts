@@ -15,6 +15,9 @@ export class FormularioCineComponent implements OnInit {
   form: FormGroup //Esto es una propiedad de tipo formgroup
 
   @Input()
+  errores: string[] = [];
+
+  @Input()
   modelo: cineCreacionDTO
 
   @Output()
