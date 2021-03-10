@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { actorCreacionDTO, actorDTO } from './actor';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { actorCreacionDTO, actorDTO, actorPeliculaDTO } from './actor';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { formatearFecha } from '../utilidades/utilidades';
 import { Observable } from 'rxjs';
@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class ActoresService {
 
   constructor(private http: HttpClient) { }
+  
 
   private apiURL = environment.apiURL + 'actores';
   
@@ -33,6 +34,12 @@ export class ActoresService {
 
     const formData = this.construirFormData(actor);
     return this.http.put(`${this.apiURL}/${id}`, formData);
+  }
+
+  public obtenerPorNombre(nombre: string): Observable<actorPeliculaDTO[]>{
+    const headers = new HttpHeaders('Content-Type: application/json');
+    return this.http.post<actorPeliculaDTO[]>(`${this.apiURL}/buscarPorNombre`,
+     JSON.stringify(nombre), {headers});
   }
 
   public crear(actor: actorCreacionDTO){
