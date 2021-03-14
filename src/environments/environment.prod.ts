@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'url de produccion'
+  apiURL: 'https://peliculasapiapp.azurewebsites.net/api/'
 };

@@ -111,10 +111,11 @@ export class FiltroPeliculasComponent implements OnInit {
 
   buscarPeliculas(valores: any) {
    valores.pagina = this.paginaActual;
-   valores.recorsPorPagina = this.cantidadElementosAMostrar;
+   valores.recordsPorPagina = this.cantidadElementosAMostrar;
     this.peliculasService.filtrar(valores).subscribe(response => {
       this.peliculas = response.body;
       this.escribirParametrosURL();
+      this.cantidadElementos = response.headers.get('cantidadTotalRegistros');
     })
       
   }

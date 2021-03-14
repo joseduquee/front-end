@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { LandingPageDTO, PeliculaCreacionDTO, PeliculaDTO, PeliculaPostGet, PeliculaPutGet } from './pelicula';
 import { formatearFecha } from '../utilidades/utilidades';
+import { ListadoPeliculasComponent } from './listado-peliculas/listado-peliculas.component';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,6 @@ export class PeliculasService {
   constructor(private http: HttpClient) {}
   private apiURL = environment.apiURL + 'peliculas';
 
-  
   public obtenerLandingPage(): Observable<LandingPageDTO>{
     return this.http.get<LandingPageDTO>(this.apiURL);
   }
@@ -43,6 +43,10 @@ export class PeliculasService {
   public editar(id: number, pelicula: PeliculaCreacionDTO) {
     const formData = this.ConstruirFormData(pelicula);
     return this.http.put(`${this.apiURL}/${id}`, formData);
+  }
+
+  public borrar(id: number) {
+    return this.http.delete(`${this.apiURL}/${id}`);
   }
 
   private ConstruirFormData(pelicula: PeliculaCreacionDTO): FormData {

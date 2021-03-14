@@ -11,7 +11,7 @@
     <mat-form-field appearance="outline">
         <mat-label>Genero</mat-label>
         <mat-select formControlName="generoId">
-            
+            <mat-option [value]="0">--Seleccione un genero--</mat-option>
             <mat-option *ngFor = "let genero of generos" [value]="genero.id">{{genero.nombre}}</mat-option>
            
         </mat-select>

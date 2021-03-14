@@ -4,6 +4,12 @@ mat-toolbar {
     position: -webkit-sticky; /*para que funciones en safari*/
     top: 0;
     z-index: 1000; /*con esto se evita que ponga encima de otros elementos*/
+}
 
+app-autorizado{
+    display: flex;
+}
 
+.espacio {
+    flex: 1 1 auto;
 }
